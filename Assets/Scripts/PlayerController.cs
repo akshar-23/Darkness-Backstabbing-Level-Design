@@ -4,21 +4,33 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     PlayerInput input;
     Vector2 moveInput;
     Vector2 lookInput;
+    [SerializeField] GameObject playerFlashlight;
     [SerializeField] Camera playerCamera;
     [SerializeField] float cameraDistance = 1f;
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float sensitivity = .4f;
     [SerializeField] float maxCameraAngle = 90f;
     [SerializeField] float minCameraAngle = -10f;
+    public Guard backstabTarget = null;
     float pitch = 0f;
     float yaw = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         input = GetComponent<PlayerInput>();
+        input.actions["Backstab"].performed += ctx => Backstab();
     }
 
 
@@ -50,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }
     void MoveCamera()
     {
-        pitch += lookInput.y * sensitivity; 
+        pitch -= lookInput.y * sensitivity;
         pitch = Mathf.Clamp(pitch, minCameraAngle, maxCameraAngle);
 
         Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
@@ -59,5 +71,16 @@ public class PlayerController : MonoBehaviour
         playerCamera.transform.position = transform.position + offset;
         playerCamera.transform.LookAt(transform.position);
 
+    }
+    
+    void Backstab()
+    {
+        if (backstabTarget != null)
+        {
+            playerFlashlight.SetActive(true);
+            backstabTarget.GetComponentInChildren<BackstabManager>().HideIndicator();
+            Destroy(backstabTarget.gameObject);
+            backstabTarget = null;
+        }
     }
 }
