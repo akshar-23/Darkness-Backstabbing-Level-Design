@@ -1,0 +1,7 @@
+Triangulation failed: Additional vertices were inserted.
+Triangulation failed: Additional vertices were inserted.
+Cannot Bevel Open Edges
+Cannot Bevel Open Edges
+Triangulation failed: Additional vertices were inserted.
+Cannot Bevel Open Edges
+Triangulation failed: Additional vertices were inserted.
