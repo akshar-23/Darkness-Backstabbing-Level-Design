@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float sensitivity = .4f;
     [SerializeField] float maxCameraAngle = 90f;
     [SerializeField] float minCameraAngle = -10f;
-    public Guard backstabTarget = null;
+    public GameObject backstabTarget = null;
     float pitch = 0f;
     float yaw = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -79,7 +79,10 @@ public class PlayerController : MonoBehaviour
     {
         if (backstabTarget != null)
         {
-            playerFlashlight.SetActive(true);
+            if (backstabTarget.GetComponentInChildren<BackstabManager>().hasFlashlight)
+            {
+                playerFlashlight.SetActive(true);
+            }
             backstabTarget.GetComponentInChildren<BackstabManager>().HideIndicator();
             Destroy(backstabTarget.gameObject);
             backstabTarget = null;

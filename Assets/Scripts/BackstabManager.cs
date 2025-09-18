@@ -4,12 +4,13 @@ using UnityEngine.InputSystem;
 public class BackstabManager : MonoBehaviour
 {
     [SerializeField] GameObject backstabIndicator;
+    [SerializeField] public bool hasFlashlight;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             backstabIndicator.SetActive(true);
-            PlayerController.instance.backstabTarget = GetComponentInParent<Guard>();
+            PlayerController.instance.backstabTarget = transform.parent.gameObject;
         }
     }
     void OnTriggerExit(Collider other)
