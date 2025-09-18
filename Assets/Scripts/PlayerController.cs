@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     [SerializeField] GameObject playerFlashlight;
     [SerializeField] Camera playerCamera;
+    [SerializeField] GameObject cameraLookAtPoint;
     [SerializeField] float cameraDistance = 1f;
+    [SerializeField] float cameraXOffset = 1f;
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float sensitivity = .4f;
     [SerializeField] float maxCameraAngle = 90f;
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -66,10 +68,10 @@ public class PlayerController : MonoBehaviour
         pitch = Mathf.Clamp(pitch, minCameraAngle, maxCameraAngle);
 
         Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
-
-        Vector3 offset = rotation * new Vector3(0, 0, -cameraDistance);
+        float rotatedCameraXOffset = cameraXOffset * playerCamera.transform.localScale.x;
+        Vector3 offset = rotation * new Vector3(rotatedCameraXOffset, 0, -cameraDistance);
         playerCamera.transform.position = transform.position + offset;
-        playerCamera.transform.LookAt(transform.position);
+        playerCamera.transform.LookAt(cameraLookAtPoint.transform.position);
 
     }
     
