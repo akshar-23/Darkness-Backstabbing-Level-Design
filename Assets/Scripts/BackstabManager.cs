@@ -10,7 +10,7 @@ public class BackstabManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             backstabIndicator.SetActive(true);
-            PlayerController.instance.backstabTarget = transform.parent.gameObject;
+            //PlayerController.instance.backstabTarget = transform.parent.gameObject;
         }
     }
     void OnTriggerExit(Collider other)
@@ -18,7 +18,7 @@ public class BackstabManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             backstabIndicator.SetActive(false);
-            PlayerController.instance.backstabTarget = null;
+            //PlayerController.instance.backstabTarget = null;
         }
     }
     public void HideIndicator()
