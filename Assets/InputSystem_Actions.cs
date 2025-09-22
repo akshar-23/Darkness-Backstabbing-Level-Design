@@ -111,7 +111,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Backstab"",
+                    ""name"": ""WindowVault"",
                     ""type"": ""Button"",
                     ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
                     ""expectedControlType"": """",
@@ -347,7 +347,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Backstab"",
+                    ""action"": ""WindowVault"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -358,7 +358,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Backstab"",
+                    ""action"": ""WindowVault"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -369,7 +369,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Touch"",
-                    ""action"": ""Backstab"",
+                    ""action"": ""WindowVault"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -380,7 +380,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
-                    ""action"": ""Backstab"",
+                    ""action"": ""WindowVault"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -391,7 +391,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""Backstab"",
+                    ""action"": ""WindowVault"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -402,7 +402,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Backstab"",
+                    ""action"": ""WindowVault"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1146,7 +1146,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Backstab = m_Player.FindAction("Backstab", throwIfNotFound: true);
+        m_Player_WindowVault = m_Player.FindAction("WindowVault", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
@@ -1248,7 +1248,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Backstab;
+    private readonly InputAction m_Player_WindowVault;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Jump;
@@ -1275,9 +1275,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Look => m_Wrapper.m_Player_Look;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Backstab".
+        /// Provides access to the underlying input action "Player/WindowVault".
         /// </summary>
-        public InputAction @Backstab => m_Wrapper.m_Player_Backstab;
+        public InputAction @WindowVault => m_Wrapper.m_Player_WindowVault;
         /// <summary>
         /// Provides access to the underlying input action "Player/Interact".
         /// </summary>
@@ -1334,9 +1334,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
-            @Backstab.started += instance.OnBackstab;
-            @Backstab.performed += instance.OnBackstab;
-            @Backstab.canceled += instance.OnBackstab;
+            @WindowVault.started += instance.OnWindowVault;
+            @WindowVault.performed += instance.OnWindowVault;
+            @WindowVault.canceled += instance.OnWindowVault;
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
@@ -1372,9 +1372,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
-            @Backstab.started -= instance.OnBackstab;
-            @Backstab.performed -= instance.OnBackstab;
-            @Backstab.canceled -= instance.OnBackstab;
+            @WindowVault.started -= instance.OnWindowVault;
+            @WindowVault.performed -= instance.OnWindowVault;
+            @WindowVault.canceled -= instance.OnWindowVault;
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
@@ -1708,12 +1708,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLook(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Backstab" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "WindowVault" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnBackstab(InputAction.CallbackContext context);
+        void OnWindowVault(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     PlayerInput input;
     Vector2 moveInput;
+    public Collider positionToVaultTo;
     [SerializeField] Camera playerCamera;
 
     [SerializeField] float moveSpeed = 0.1f;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         input = GetComponent<PlayerInput>();
+        input.actions["WindowVault"].performed += ctx => ActivateWindowVault();
     }
 
 
@@ -50,8 +52,12 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, playerCamera.transform.eulerAngles.y, 0);
 
     }
-    
-    
-    
-    
+
+    void ActivateWindowVault()
+    {
+        if(positionToVaultTo != null)
+        {
+            transform.position = positionToVaultTo.bounds.center;
+        }
+    }
 }
