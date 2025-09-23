@@ -10,7 +10,6 @@ public class TriggerZombie : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             zombie.EnableChase();
-            Time.timeScale = 0f;
             Destroy(gameObject);
         }
     }

@@ -10,7 +10,7 @@ public class Zombie : MonoBehaviour
 
     void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponentInParent<NavMeshAgent>();
     }
 
     // Update is called once per frame
