@@ -32,7 +32,7 @@ public class Zombie : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameOverIndicator.SetActive(true);
-            Time .timeScale = 0f;
+            Time.timeScale = 0f;
         }
     }
 }
