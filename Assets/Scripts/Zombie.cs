@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -31,7 +32,7 @@ public class Zombie : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameOverIndicator.SetActive(true);
+            GameOverIndicator.GetComponentInChildren<TextMeshProUGUI>().text = "Game Over";
             Time.timeScale = 0f;
         }
     }

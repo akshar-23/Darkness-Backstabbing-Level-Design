@@ -1,14 +1,19 @@
 using UnityEngine;
+using TMPro;
 
 public class WinCondition : MonoBehaviour
 {
-    [SerializeField] GameObject WinIndicator;
+    [SerializeField] GameObject GameText;
+    [SerializeField] TriggerZombie triggerZombie;
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (triggerZombie.trigg)
         {
-            WinIndicator.SetActive(true);
-            Time.timeScale = 0f;
-        }
+            if (other.CompareTag("Player"))
+            {
+                GameText.GetComponentInChildren<TextMeshProUGUI>().text = "I managed to escape!";
+                Time.timeScale = 0f;
+            }
+        }  
     }
 }
