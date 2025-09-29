@@ -173101,10 +173101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -248697,15 +248697,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5654337550847839251, guid: 5a56baa133fa1454997f1d77ca9ac6c9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04764222
+      value: -0.047642227
       objectReference: {fileID: 0}
     - target: {fileID: 5654337550847839251, guid: 5a56baa133fa1454997f1d77ca9ac6c9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.22599936
+      value: 0.22599933
       objectReference: {fileID: 0}
     - target: {fileID: 5654337550847839251, guid: 5a56baa133fa1454997f1d77ca9ac6c9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.011067042
+      value: 0.011067041
       objectReference: {fileID: 0}
     - target: {fileID: 5736347824505269969, guid: 5a56baa133fa1454997f1d77ca9ac6c9, type: 3}
       propertyPath: m_ClearFlags
@@ -248805,15 +248805,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7597256452340263571, guid: 5a56baa133fa1454997f1d77ca9ac6c9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.047642224
+      value: -0.047642227
       objectReference: {fileID: 0}
     - target: {fileID: 7597256452340263571, guid: 5a56baa133fa1454997f1d77ca9ac6c9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.22599937
+      value: 0.22599934
       objectReference: {fileID: 0}
     - target: {fileID: 7597256452340263571, guid: 5a56baa133fa1454997f1d77ca9ac6c9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.011067042
+      value: 0.011067041
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
