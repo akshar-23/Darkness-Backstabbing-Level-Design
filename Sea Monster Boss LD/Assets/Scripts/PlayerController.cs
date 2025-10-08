@@ -7,9 +7,15 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     PlayerInput input;
     Vector2 moveInput;
+    Vector2 lookInput;
+    float pitch = 0f;
+    float yaw = 0f;
     [SerializeField] Camera playerCamera;
 
+    [SerializeField] float minPitch = -45f;
+    [SerializeField] float maxPitch = 75f;
     [SerializeField] float moveSpeed = 0.1f;
+    [SerializeField] float sensitivity = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +36,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        AimCamera();
         MovePlayer();
+    }
+    void AimCamera()
+    {
+        playerCamera.transform.position = transform.position;
+        lookInput = input.actions["Look"].ReadValue<Vector2>();
+
+        pitch -= lookInput.y * sensitivity * Time.deltaTime;
+        pitch = Mathf.Clamp(pitch, maxPitch * -1, minPitch * -1);
+
+        yaw += lookInput.x * sensitivity * Time.deltaTime;
+
+        playerCamera.transform.rotation = Quaternion.Euler(pitch, yaw, 0f);
     }
 
     void MovePlayer()
