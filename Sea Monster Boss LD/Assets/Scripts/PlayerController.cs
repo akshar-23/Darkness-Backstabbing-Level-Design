@@ -1,7 +1,7 @@
-using NUnit.Framework.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     float pitch = 0f;
     float yaw = 0f;
+    Rigidbody rb;
     [SerializeField] Camera playerCamera;
 
     [SerializeField] float minPitch = -45f;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         if (instance == null)
         {
             instance = this;
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         AimCamera();
         MovePlayer();
     }
@@ -64,7 +67,7 @@ public class PlayerController : MonoBehaviour
         camRight.Normalize();
 
         Vector3 posChange = camRight * moveInput.x + camForward * moveInput.y;
-        transform.position += posChange * moveSpeed;
+        rb.MovePosition(rb.position + posChange * moveSpeed);
 
         transform.rotation = Quaternion.Euler(0, playerCamera.transform.eulerAngles.y, 0);
 
