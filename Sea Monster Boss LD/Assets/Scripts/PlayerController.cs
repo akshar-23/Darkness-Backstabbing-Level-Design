@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     }
     void AimCamera()
     {
-        playerCamera.transform.position = transform.position;
+        playerCamera.transform.position = transform.position + Vector3.up * 0.8f;
         lookInput = input.actions["Look"].ReadValue<Vector2>();
 
         pitch -= lookInput.y * sensitivity * Time.deltaTime;
