@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     float pitch = 0f;
     float yaw = 0f;
     Rigidbody rb;
+    Scene currentScene;
     [SerializeField] Camera playerCamera;
 
     [SerializeField] float minPitch = -45f;
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
         rb = GetComponent<Rigidbody>();
         if (instance == null)
         {
@@ -32,6 +35,19 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         input = GetComponent<PlayerInput>();
+        input.actions["Switch"].performed += ctx =>
+        {
+            if (currentScene == SceneManager.GetSceneByName("Book Store"))
+            {
+                SceneManager.LoadScene("Book Store Broken");
+                currentScene = SceneManager.GetSceneByName("Book Store Broken");
+            }
+            else
+            {
+                SceneManager.LoadScene("Book Store");
+                currentScene = SceneManager.GetSceneByName("Book Store");
+            }
+        };
     }
 
 
