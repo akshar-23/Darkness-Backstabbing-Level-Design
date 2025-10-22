@@ -1,0 +1,85 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 17.09.2015 19:35:28
+
+newmtl 10___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0000 0.0000 0.0000
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl 01___Defaultdddfrrssdfff
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.5880 0.5880 0.5880
+	map_Ka sheyzz-birthday-candle-flame.png
+	map_Kd sheyzz-birthday-candle-flame.png
+	map_d sheyzz-birthday-candle-flame.png
+
+newmtl 01___Defaultdsdddpfffd
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.5882 0.5882 0.5882
+	map_Ka van_gogh_fabric.jpg
+	map_Kd van_gogh_fabric.jpg
+
+newmtl 01___Defd
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.5882 0.5882 0.5882
+	map_Ka van_gogh_candle.jpg
+	map_Kd van_gogh_candle.jpg
+
+newmtl 01___Defaultdsdddfffd
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.5882 0.5882 0.5882
+	map_Ka van_gogh_books.jpg
+	map_Kd van_gogh_books.jpg
+
+newmtl 01___Def
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5882 0.5882 0.5882
+	Kd 0.5882 0.5882 0.5882
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.5882 0.5882 0.5882
+	map_Ka van_gogh_table.jpg
+	map_Kd van_gogh_table.jpg
