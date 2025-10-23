@@ -3,7 +3,32 @@ guid: 373bcf674611f9747a757ba6e5114d28
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 6e1bbd0e23b66ee449ca6dd6d1271ec8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: f289e20a6daf6464793a166c9d103323, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: ba60f06c0062a6644bd80f89ff8a74c2, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: exterior_wall_cladding_ao_4k
+    second: {fileID: 2800000, guid: 1df349c8d58ca8047aacd79edd5cc7e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: stone_tile_wall_diff_4k
+    second: {fileID: 2800000, guid: c0f9db2b67ed97b41818280d8b566b95, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
