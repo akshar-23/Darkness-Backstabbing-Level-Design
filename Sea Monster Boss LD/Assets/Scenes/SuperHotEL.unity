@@ -10845,7 +10845,7 @@ Transform:
   m_GameObject: {fileID: 348676606}
   serializedVersion: 2
   m_LocalRotation: {x: -0.50475955, y: 0.4951947, z: 0.50475955, w: 0.4951947}
-  m_LocalPosition: {x: 2.038, y: -3.675, z: 0.824}
+  m_LocalPosition: {x: 1.636, y: -3.533, z: 0.408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82131,8 +82131,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Decorations
       objectReference: {fileID: 0}
+    - target: {fileID: 9059690366156590383, guid: b824bfb0ce5f65f48943b9491d73b3cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.139
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059690366156590383, guid: b824bfb0ce5f65f48943b9491d73b3cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.117
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8693226245011545810, guid: b824bfb0ce5f65f48943b9491d73b3cc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b824bfb0ce5f65f48943b9491d73b3cc, type: 3}
